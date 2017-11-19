@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_type: MyString
+  design: MyString
+  gender: MyString
+  price: 
+  stock_quantity: 1
+
+two:
+  product_type: MyString
+  design: MyString
+  gender: MyString
+  price: 
+  stock_quantity: 1
