@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many: orders
-  has_many: shopping_carts
+  #has_many: shopping_carts
 
   def self.find_or_create_with_facebook_access_token(oauth_access_token)
     graph = Koala::Facebook::API.new(oauth_access_token)
