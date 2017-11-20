@@ -18,8 +18,10 @@ gem 'active_model_serializers', '~> 0.10.7'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-# Gem for For OAuth Interaction
-gem 'devise', '~> 4.3'
+# Koala Gem for For OAuth Interaction
+gem 'koala', '~> 3.0'
+# Stripe API gem
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 
@@ -43,5 +45,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 ruby "2.4.2"
