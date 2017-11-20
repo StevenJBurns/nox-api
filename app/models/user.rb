@@ -21,5 +21,5 @@ class User < ApplicationRecord
   #   else
   #     User.create(data)
   #   end
-  end
+  # end
 end
