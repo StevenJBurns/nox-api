@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119213706) do
+ActiveRecord::Schema.define(version: 20171120011356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,30 @@ ActiveRecord::Schema.define(version: 20171119213706) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["service_id"], name: "index_testimonials_on_service_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "address_street_1"
+    t.string "address_street_2"
+    t.string "address_city"
+    t.string "address_state"
+    t.string "address_zip"
+    t.string "phone"
+    t.string "email"
+    t.boolean "is_admin"
+    t.boolean "can_contact"
+    t.string "password"
+    t.string "uid"
+    t.string "provider"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string "authentication_token"
+    t.string "name"
+    t.string "picture_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "testimonials", "services"

@@ -31,3 +31,9 @@ Product.create(product_type: 'Hoodie', design: 'Red', gender: 'male', stock_quan
 Product.create(product_type: 'Hoodie', design: 'Gold', gender: 'female', stock_quantity: 1, price: 18.00)
 Product.create(product_type: 'Sweat Shirt', design: 'Red', gender: 'male', stock_quantity: 0, price: 24.00)
 Product.create(product_type: 'Sweat Shirt', design: 'Blue', gender: 'female', stock_quantity: 4, price: 24.00)
+
+User.create(is_admin: true, last_name: 'Stoll', first_name: 'Zac')
+User.create(is_admin: true, last_name: 'Something', first_name: 'Dustin')
+User.create(is_admin: false, last_name: 'Balser', first_name: 'Brodie')
+User.create(is_admin: false, last_name: 'Dowe', first_name: 'James')
+User.create(is_admin: false, last_name: 'Burns', first_name: 'Steven', can_contact: true, email: 'stevenjburns@msn.com', phone: '719-440-7097')

@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_name: MyString
+  first_name: MyString
+  address_street_1: MyString
+  address_street_2: MyString
+  address_city: MyString
+  address_state: MyString
+  address_zip: MyString
+  phone: MyString
+  email: MyString
+  is_admin: false
+  can_contact: false
+  password: MyString
+  uid: MyString
+  provider: MyString
+  oauth_token: MyString
+  oauth_expires_at: 2017-11-19 18:13:56
+  authentication_token: MyString
+  name: MyString
+  picture_url: MyString
+
+two:
+  last_name: MyString
+  first_name: MyString
+  address_street_1: MyString
+  address_street_2: MyString
+  address_city: MyString
+  address_state: MyString
+  address_zip: MyString
+  phone: MyString
+  email: MyString
+  is_admin: false
+  can_contact: false
+  password: MyString
+  uid: MyString
+  provider: MyString
+  oauth_token: MyString
+  oauth_expires_at: 2017-11-19 18:13:56
+  authentication_token: MyString
+  name: MyString
+  picture_url: MyString

@@ -14,6 +14,10 @@ gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.10'
 # Gem to kick out good JSON from API route calls
 gem 'active_model_serializers', '~> 0.10.7'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+gem 'rack-cors'
 # Gem for For OAuth Interaction
 gem 'devise', '~> 4.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -22,14 +26,8 @@ gem 'devise', '~> 4.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
