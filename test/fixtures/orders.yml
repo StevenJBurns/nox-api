@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  cart: MyText
+  paid_on: 2017-11-20 13:29:18
+  shipped_on: 2017-11-20 13:29:18
+
+two:
+  user: two
+  cart: MyText
+  paid_on: 2017-11-20 13:29:18
+  shipped_on: 2017-11-20 13:29:18

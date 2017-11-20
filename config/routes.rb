@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :shopping_carts
+  resources :orders
   resources :users
   resources :products
   resources :testimonials
   resources :services
 
-  resources :login
+  resources :logins
 
   #get 'charges/new'
   #get 'charges/create'
