@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :products
   resources :testimonials
   resources :services
-
   resources :logins
 
   #get 'charges/new'
