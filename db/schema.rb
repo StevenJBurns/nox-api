@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122173904) do
+ActiveRecord::Schema.define(version: 20171215174809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171122173904) do
     t.datetime "shipped_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shipping_address", limit: 1024
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -34,6 +35,8 @@ ActiveRecord::Schema.define(version: 20171122173904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "size"
+    t.string "front_img"
+    t.string "back_img"
   end
 
   create_table "services", force: :cascade do |t|
@@ -64,25 +67,12 @@ ActiveRecord::Schema.define(version: 20171122173904) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.string "address_street_1"
-    t.string "address_street_2"
-    t.string "address_city"
-    t.string "address_state"
-    t.string "address_zip"
-    t.string "phone"
     t.string "email"
     t.boolean "is_admin"
     t.boolean "can_contact"
-    t.string "password"
     t.string "uid"
     t.string "provider"
-    t.string "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.string "authentication_token"
     t.string "name"
-    t.string "picture_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
