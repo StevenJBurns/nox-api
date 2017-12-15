@@ -24,7 +24,7 @@ gem 'koala', '~> 3.0'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
-
+gem 'mail'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
