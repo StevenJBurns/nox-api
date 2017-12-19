@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :charities
   resources :shopping_carts
   resources :orders
   resources :users
