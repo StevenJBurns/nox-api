@@ -3,10 +3,11 @@ class ChargesController < ApplicationController
 
   def create
     token = params[:token]
+    currentUser = params[:currentUser]
     amount = params[:amount]
 
     puts 'Hi from the server'
-    puts params[:token]
+    puts params[:currentUser]
 
     # Set your secret key: remember to change this to your live secret key in production
     # See your keys here: https://dashboard.stripe.com/account/apikeys
