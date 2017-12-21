@@ -18,7 +18,22 @@ class ChargesController < ApplicationController
 
     @shoppingCarts = ShoppingCart.where(:user_id => currentUser)
 
-    puts @shoppingCarts.map { |e| e.quantity }
+    chargedQuantities =  @shoppingCarts.map { |e| e.quantity }
+
+    chargedProducts = @shoppingCarts.map { |e| e.product_id }
+
+    @products = Product.all
+
+    runningSum = 0
+
+    @products.map do |e|
+      chargedProducts.map do |b, i|
+        e.id = b?
+          runningSum = runningSum + (e.price * chargedQuantities[i])
+      end
+    end
+
+    puts runningSum
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
