@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
       @products = Product.where(:id => p)
     end
 
-    puts prods
+    puts json: prods
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
