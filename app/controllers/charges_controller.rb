@@ -16,8 +16,8 @@ class ChargesController < ApplicationController
     # Token is created using Checkout or Elements!
     # Get the payment token ID submitted by the form:
 
-    @shoppingCarts = ShoppingCart.find(:all, :conditions => {:user_id => params[:currentUser]})
-    puts shoppingCarts
+    @shoppingCarts = ShoppingCart.where(:user_id => currentUser)
+    puts @shoppingCarts
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
@@ -26,8 +26,6 @@ class ChargesController < ApplicationController
       #:description => "Example charge",
       :source => token,
     )
-
-
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
