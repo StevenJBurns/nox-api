@@ -26,7 +26,13 @@ class ChargesController < ApplicationController
       @products = Product.where(:id => p)
     end
 
-    puts json: prods
+    total = 0
+
+    prods.map do |p, i|
+      total = total + (p.price * chargedQuantities[i])
+    end
+
+    puts json: total
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
