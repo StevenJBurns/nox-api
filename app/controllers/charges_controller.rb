@@ -18,8 +18,7 @@ class ChargesController < ApplicationController
 
     @shoppingCarts = ShoppingCart.where(:user_id => currentUser)
 
-    @shoppingCarts.map do { |e| e.quantity }
-    end
+    @shoppingCarts.map { |e| e.quantity }
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
