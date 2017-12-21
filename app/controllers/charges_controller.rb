@@ -22,18 +22,11 @@ class ChargesController < ApplicationController
 
     chargedProducts = @shoppingCarts.map { |e| e.product_id }
 
-    @products = Product.all
-
-    runningSum = 0
-
-    @products.map do |e|
-      chargedProducts.map do |b, i|
-        e.id = b?
-          runningSum = runningSum + (e.price * chargedQuantities[i])
-      end
+    prods = chargedProducts.map do |p|
+      @products = Product.where(:id => p)
     end
 
-    puts runningSum
+    puts prods
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
