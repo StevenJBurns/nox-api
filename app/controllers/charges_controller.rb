@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
     # Get the payment token ID submitted by the form:
 
     shoppingCarts = ShoppingCart.where(:user_id => currentUser)
-    puts 'Current Shopping Carts', shoppingCarts
+    puts 'Current Shopping Carts', shoppingCarts.each
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
