@@ -4,7 +4,6 @@ class ChargesController < ApplicationController
   def create
     token = params[:token]
     amount = params[:amount]
-    address = params[:address]
 
     puts 'Hi from the server'
     puts params[:token]
@@ -23,7 +22,6 @@ class ChargesController < ApplicationController
       :currency => "usd",
       #:description => "Example charge",
       :source => token,
-      :address => address
     )
 
   rescue Stripe::CardError => e
