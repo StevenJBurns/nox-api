@@ -6,18 +6,15 @@ class ChargesController < ApplicationController
     currentUser = params[:currentUser]
     amount = params[:amount]
 
-    puts 'Hi from the server'
-    puts params[:currentUser]
-
     # Set your secret key: remember to change this to your live secret key in production
     # See your keys here: https://dashboard.stripe.com/account/apikeys
     Stripe.api_key = "sk_test_oeXe9v0Dx57ooSxUJCMJzcAs"
 
+    puts 'Hi from the server'
+
     runningTotal = 0
 
     shoppingCarts = ShoppingCart.joins(:user).where(:user_id => currentUser)
-
-    puts shoppingCarts.inspect
 
     shoppingCarts.each do |cart|
       product = Product.find(cart.product_id)
@@ -27,24 +24,8 @@ class ChargesController < ApplicationController
 
     puts runningTotal.inspect
 
-    # Token is created using Checkout or Elements!
-    # Get the payment token ID submitted by the form:
+    puts (runningTotal == amout) ? "Stripe Total Equals Database Amount" : "Stripe Amount DOES NOT EQUAL Database Amount"
 
-    # @shoppingCarts = ShoppingCart.where(:user_id => currentUser)
-    #
-    # chargedQuantities =  @shoppingCarts.map { |e| e.quantity }
-    #
-    # chargedProducts = @shoppingCarts.map { |e| e.product_id }
-    #
-    # prods = chargedProducts.map do |p|
-    #   @products = Product.where(:id => p)
-    # end
-
-    # prods.map do |p, i|
-    #   total = total + (p.price * chargedQuantities[i])
-    # end
-
-    puts runningTotal
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
