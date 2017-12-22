@@ -19,6 +19,13 @@ class ChargesController < ApplicationController
 
     puts shoppingCarts.inspect
 
+    shoppingCarts.each do |cart|
+      price = ShoppingCart.joins(:product).where(:product_id => cart.product_id)
+
+      runningTotal += price * cart.quantity
+    end
+
+    puts runningTotal.inspect
 
     # Token is created using Checkout or Elements!
     # Get the payment token ID submitted by the form:
