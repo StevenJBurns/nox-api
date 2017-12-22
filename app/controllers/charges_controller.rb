@@ -14,7 +14,7 @@ class ChargesController < ApplicationController
 
     runningTotal = 0
     taxRate = 0.07
-    shippingRate = 300
+    shippingRate = 499
 
     shoppingCarts = ShoppingCart.joins(:user).where(:user_id => currentUser)
 
