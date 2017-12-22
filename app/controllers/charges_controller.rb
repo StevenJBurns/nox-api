@@ -13,6 +13,8 @@ class ChargesController < ApplicationController
     puts 'Hi from the server'
 
     runningTotal = 0
+    taxRate = 0.07
+    shippingRate = 300
 
     shoppingCarts = ShoppingCart.joins(:user).where(:user_id => currentUser)
 
@@ -28,6 +30,9 @@ class ChargesController < ApplicationController
     puts amount.inspect
 
     (runningTotal == amount) ? amount = amount : amount = 0
+
+    amount += shippingRate
+    amount += (amount * taxRate)
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
