@@ -20,9 +20,9 @@ class ChargesController < ApplicationController
     puts shoppingCarts.inspect
 
     shoppingCarts.each do |cart|
-      price = ShoppingCart.joins(:product).where(:product_id => cart.product_id)
+      product = Product.find(cart.product_id)
 
-      runningTotal += price * cart.quantity
+      runningTotal += product.price * cart.quantity
     end
 
     puts runningTotal.inspect
