@@ -22,17 +22,18 @@ class ChargesController < ApplicationController
       runningTotal += product.price * cart.quantity
     end
 
+    runningTotal *= 100
     puts runningTotal.inspect
 
-    amount = (runningTotal == amount) ? runningTotal : nil
+    amount = (runningTotal == amount) ? runningTotal  : nil
 
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
       :amount => amount,
       :currency => "usd",
-      :source => token,
       #:description => "Example charge",
+      :source => token,
     )
 
   rescue Stripe::CardError => e
