@@ -27,7 +27,7 @@ class ChargesController < ApplicationController
     puts runningTotal.inspect
     puts amount.inspect
 
-    puts (runningTotal == amount) ? "Price Check Good" : "Price Check Bad"
+    (runningTotal == amount) ? amount = amount : amount = 0
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
