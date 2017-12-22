@@ -37,7 +37,7 @@ class ChargesController < ApplicationController
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
-      :amount => amount / 100,
+      :amount => amount,
       :currency => "usd",
       #:description => "Example charge",
       :source => token,
