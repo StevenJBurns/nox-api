@@ -24,7 +24,7 @@ class ChargesController < ApplicationController
 
     puts runningTotal.inspect
 
-    amount = (runningTotal == amount) ? runningTotal  : nil
+    amount = (runningTotal == amount) ? amount  : nil
 
 
     # Charge the user's card:
