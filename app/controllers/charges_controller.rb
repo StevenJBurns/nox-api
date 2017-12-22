@@ -22,7 +22,6 @@ class ChargesController < ApplicationController
       runningTotal += product.price * cart.quantity
     end
 
-    runningTotal *= 100
     puts runningTotal.inspect
 
     amount = (runningTotal == amount) ? runningTotal  : nil
