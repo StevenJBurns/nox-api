@@ -22,10 +22,11 @@ class ChargesController < ApplicationController
       runningTotal += product.price * cart.quantity
     end
 
+
     puts runningTotal.inspect
     puts amount.inspect
 
-    #amount = (runningTotal == amount) ? amount : nil
+    puts (runningTotal == amount) ? "Price Check Good" : "Price Check Bad"
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
