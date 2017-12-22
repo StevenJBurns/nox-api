@@ -24,12 +24,12 @@ class ChargesController < ApplicationController
 
     puts runningTotal.inspect
 
-    runningTotal = (runningTotal == amount) ? amount : nil
+    amount = (runningTotal == amount) ? runningTotal : nil
 
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
-      :amount => runningTotal,
+      :amount => amount,
       :currency => "usd",
       :source => token,
       #:description => "Example charge",
