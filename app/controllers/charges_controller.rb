@@ -15,9 +15,8 @@ class ChargesController < ApplicationController
 
     runningTotal = 0
 
-    shoppingCarts = ShoppingCart.joins(:user_id).where(:user_id => currentUser)
+    shoppingCarts = ShoppingCart.joins(:user).where(:user_id => currentUser)
 
-    puts shoppingCarts
 
     # Token is created using Checkout or Elements!
     # Get the payment token ID submitted by the form:
