@@ -32,7 +32,7 @@ class ChargesController < ApplicationController
       total = total + (p.price * chargedQuantities[i])
     end
 
-    puts json: total
+    puts total
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
