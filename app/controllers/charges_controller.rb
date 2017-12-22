@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
 
     shoppingCarts = ShoppingCart.joins(:user).where(:user_id => currentUser)
 
-    puts JSON.pretty_generate(shoppingCarts)
+    puts json: shoppingCarts
 
 
     # Token is created using Checkout or Elements!
