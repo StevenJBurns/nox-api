@@ -13,26 +13,30 @@ class ChargesController < ApplicationController
     # See your keys here: https://dashboard.stripe.com/account/apikeys
     Stripe.api_key = "sk_test_oeXe9v0Dx57ooSxUJCMJzcAs"
 
+    runningTotal = 0
+
+    shoppingCarts = ShoppingCart.joins(:users).where(:user_id => currentUser)
+
+    puts shoppingCarts
+
     # Token is created using Checkout or Elements!
     # Get the payment token ID submitted by the form:
 
-    @shoppingCarts = ShoppingCart.where(:user_id => currentUser)
+    # @shoppingCarts = ShoppingCart.where(:user_id => currentUser)
+    #
+    # chargedQuantities =  @shoppingCarts.map { |e| e.quantity }
+    #
+    # chargedProducts = @shoppingCarts.map { |e| e.product_id }
+    #
+    # prods = chargedProducts.map do |p|
+    #   @products = Product.where(:id => p)
+    # end
 
-    chargedQuantities =  @shoppingCarts.map { |e| e.quantity }
+    # prods.map do |p, i|
+    #   total = total + (p.price * chargedQuantities[i])
+    # end
 
-    chargedProducts = @shoppingCarts.map { |e| e.product_id }
-
-    prods = chargedProducts.map do |p|
-      @products = Product.where(:id => p)
-    end
-
-    total = 0
-
-    prods.map do |p, i|
-      total = total + (p.price * chargedQuantities[i])
-    end
-
-    puts total
+    puts runningTotal
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
