@@ -24,15 +24,15 @@ class ChargesController < ApplicationController
 
     puts runningTotal.inspect
 
-    puts (runningTotal == amout) ? "Stripe Total Equals Database Amount" : "Stripe Amount DOES NOT EQUAL Database Amount"
+    runningTotal = (runningTotal == amount) ? amount : nil
 
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
-      :amount => amount,
+      :amount => runningTotal,
       :currency => "usd",
-      #:description => "Example charge",
       :source => token,
+      #:description => "Example charge",
     )
 
   rescue Stripe::CardError => e
