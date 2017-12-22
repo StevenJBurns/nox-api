@@ -33,10 +33,11 @@ class ChargesController < ApplicationController
 
     amount += shippingRate
     amount += (amount * taxRate)
+    amount = amount.ceil
 
     # Charge the user's card:
     charge = Stripe::Charge.create(
-      :amount => amount * 100,
+      :amount => amount / 100,
       :currency => "usd",
       #:description => "Example charge",
       :source => token,
