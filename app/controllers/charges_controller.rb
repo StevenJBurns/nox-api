@@ -15,7 +15,7 @@ class ChargesController < ApplicationController
 
     runningTotal = 0
 
-    shoppingCarts = ShoppingCart.joins(:users).where(:user_id => currentUser)
+    shoppingCarts = ShoppingCart.joins(:user_id).where(:user_id => currentUser)
 
     puts shoppingCarts
 
