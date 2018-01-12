@@ -8,7 +8,7 @@ class ChargesController < ApplicationController
 
     # Set your secret key: remember to change this to your live secret key in production
     # See your keys here: https://dashboard.stripe.com/account/apikeys
-    Stripe.api_key = "sk_test_oeXe9v0Dx57ooSxUJCMJzcAs"
+    Stripe.api_key = "sk_live_6We9QN1VTwCz425XoMADjpTa"
 
     puts 'Hi from the server'
 
